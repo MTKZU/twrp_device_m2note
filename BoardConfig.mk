@@ -21,8 +21,7 @@ TARGET_IS_64_BIT := true
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-TARGET_KERNEL_SOURCE := kernel/meizu/m2note
-TARGET_KERNEL_CONFIG := twrp_m2note_defconfig
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/Image.gz-dtb
 BOARD_MKBOOTIMG_ARGS := \
     --board $(TARGET_BOARD_PLATFORM) \
     --kernel_offset 0x8000 \
@@ -51,3 +50,5 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_CRYPTO := true
 TW_THEME := portrait_hdpi
 TW_MAX_BRIGHTNESS := 255
+LZMA_RAMDISK_TARGETS := recovery
+BOARD_HAS_FLIPPED_SCREEN := true
